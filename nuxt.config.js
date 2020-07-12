@@ -25,11 +25,11 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: process.env.npm_package_description || 'pakabar'
       },
       {
         property: 'og:image',
-        content: '/header.jpg'
+        content: '/header.png'
       }
     ],
     link: [{

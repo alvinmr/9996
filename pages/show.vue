@@ -26,10 +26,6 @@ export default {
     return { word: "", loading: false };
   },
   async asyncData({ params }) {
-    // const { data } = await axios.get(
-    //   "http://localhost:8000/api/v1/" + params.id
-    // );
-    // const text = data.texts.replace(/&nbsp;/g, " ");
     const value = `; ${document.cookie}`;
     const parts = value.split(`; word=`);
     return { word: parts.length === 2 ? parts.pop().split(";").shift() : "" };

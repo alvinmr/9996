@@ -80,7 +80,7 @@ body {
   font-family: "Roboto Mono";
 }
 a {
-  display: block;
+  display: none;
 }
 </style>
 

@@ -49,7 +49,7 @@ export default {
   },
   async asyncData({ params }) {
     const { data } = await axios.get(
-      "http://api-9996.herokuapp.com/api/v1"
+      "https://api-9996.herokuapp.com/api/v1"
     );
     const text = data[0].texts.replace(/&nbsp;/g, " ");
     return { word: text };
@@ -57,7 +57,7 @@ export default {
   methods: {
     async getWord() {
       this.loading = true;
-      axios.get("http://api-9996.herokuapp.com/api/v1").then((res) => {
+      axios.get("https://api-9996.herokuapp.com/api/v1").then((res) => {
         this.word = res.data[0].texts.replace(/&nbsp;/g, " ");
         this.loading = false;
       });

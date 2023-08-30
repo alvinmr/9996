@@ -2,7 +2,7 @@
   <div class="container px-4 mx-auto text-left">
     <h1 class="text-center">9996.</h1>
     <div
-      class="w-full p-2 mt-2 overflow-scroll bg-white border-2 border-black border-solid  wrapper-word"
+      class="w-full p-2 mt-2 overflow-scroll bg-white border-2 border-black border-solid wrapper-word"
     >
       <div v-if="loading">Sedang memuat....</div>
       <div id="word" v-else class="w-full" v-html="word"></div>
@@ -49,7 +49,7 @@ export default {
   },
   async asyncData({ params }) {
     const { data } = await axios.get(
-      "https://999-api-production.up.railway.app/api/v1"
+      "http://api-9996.herokuapp.com/api/v1"
     );
     const text = data[0].texts.replace(/&nbsp;/g, " ");
     return { word: text };
@@ -57,7 +57,7 @@ export default {
   methods: {
     async getWord() {
       this.loading = true;
-      axios.get("https://999-api-production.up.railway.app/api/v1").then((res) => {
+      axios.get("http://api-9996.herokuapp.com/api/v1").then((res) => {
         this.word = res.data[0].texts.replace(/&nbsp;/g, " ");
         this.loading = false;
       });
